@@ -1,8 +1,9 @@
 import {CreateGameData, Game, WebSocketWithUserId} from "../../types";
 import {createGameCode} from "../../utils/createGameCode";
 import crypto from "crypto";
+import {MESSAGES_TYPE} from "../../ws/messages";
 
-const games = new Map<string, Game>();
+export const games = new Map<string, Game>();
 
 export function handleCreateGame(
   ws: WebSocketWithUserId,
@@ -26,7 +27,7 @@ export function handleCreateGame(
 
   ws.send(
     JSON.stringify({
-      type: "game_created",
+      type: MESSAGES_TYPE.GAME_CREATED,
       data: {gameId, code},
       id: 0,
     }),

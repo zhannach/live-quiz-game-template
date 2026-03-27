@@ -1,7 +1,6 @@
 import {WebSocket} from "ws";
 import {WSMessage, WebSocketWithUserId} from "../types";
-import {handleRegister} from "../commands/player/handleRegister";
-import {handleCreateGame} from "../commands/gameManagement /handleCreateGame";
+import {dispatchMessage} from "./messages";
 
 export const controlConnection = (ws: WebSocket) => {
   const extWs = ws as WebSocketWithUserId;
@@ -9,18 +8,7 @@ export const controlConnection = (ws: WebSocket) => {
   extWs.on("message", (message) => {
     const parsed: WSMessage = JSON.parse(message.toString());
 
-    switch (parsed.type) {
-      case "reg":
-        handleRegister(extWs, parsed.data);
-        break;
-      case "create_game":
-        handleCreateGame(extWs, parsed.data);
-        break;
-      default:
-        console.log("Unknown message type:", parsed.type);
-    }
-
-    console.log(parsed);
+    dispatchMessage(extWs, parsed);
   });
 
   extWs.on("close", () => {

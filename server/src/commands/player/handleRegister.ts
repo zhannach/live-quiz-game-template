@@ -1,10 +1,10 @@
 import crypto from "crypto";
 
-import {WebSocket} from "ws";
 import {User, RegData, WebSocketWithUserId} from "../../types";
+import { MESSAGES_TYPE } from "../../ws/messages";
 
-const users = new Map<string, User>();
-const connections = new Map<string, WebSocketWithUserId>();
+export const users = new Map<string, User>();
+export const connections = new Map<string, WebSocketWithUserId>();
 
 export function handleRegister(ws: WebSocketWithUserId, data: RegData) {
   const {name, password} = data;
@@ -33,7 +33,7 @@ export function handleRegister(ws: WebSocketWithUserId, data: RegData) {
 
     return ws.send(
       JSON.stringify({
-        type: "reg",
+        type: MESSAGES_TYPE.REG,
         data: {
           name,
           index: existingUser.index,
@@ -60,7 +60,7 @@ export function handleRegister(ws: WebSocketWithUserId, data: RegData) {
 
   ws.send(
     JSON.stringify({
-      type: "reg",
+      type: MESSAGES_TYPE.REG,
       data: {
         name: user.name,
         index: id,

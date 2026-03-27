@@ -1,7 +1,8 @@
-import type {WebSocket} from "ws";
+import type { WebSocket } from "ws";
 
 export interface WebSocketWithUserId extends WebSocket {
   userId: string;
+  gameId?: string;
 }
 
 export interface Player {
@@ -31,7 +32,7 @@ export interface Game {
   status: "waiting" | "in_progress" | "finished";
   questionStartTime?: number;
   questionTimer?: NodeJS.Timeout;
-  playerAnswers: Map<string, {answerIndex: number; timestamp: number}>;
+  playerAnswers: Map<string, { answerIndex: number; timestamp: number }>;
 }
 
 export interface User {
