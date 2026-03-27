@@ -2,6 +2,7 @@ import {JoinGameData, WebSocketWithUserId} from "../../types";
 import {games} from "./handleCreateGame";
 import {users, connections} from "../player/handleRegister";
 import {MESSAGES_TYPE} from "../../ws/messages";
+import {updatePlayers} from "./updatePlayers";
 
 export function handleJoinGame(ws: WebSocketWithUserId, {code}: JoinGameData) {
   const game = [...games.values()].find((g) => g.code === code);
@@ -56,4 +57,6 @@ export function handleJoinGame(ws: WebSocketWithUserId, {code}: JoinGameData) {
   if (hostWs && hostWs.readyState === 1 && !isHostAlsoPlayer) {
     hostWs.send(broadcastMsg);
   }
+
+  updatePlayers(game);
 }

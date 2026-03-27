@@ -1,7 +1,7 @@
-import { handleCreateGame } from "../commands/gameManagement /handleCreateGame";
-import { handleJoinGame } from "../commands/gameManagement /handleJoinGame";
-import { handleRegister } from "../commands/player/handleRegister";
-import { WebSocketWithUserId, WSMessage } from "../types";
+import {handleCreateGame} from "../commands/gameManagement /handleCreateGame";
+import {handleJoinGame} from "../commands/gameManagement /handleJoinGame";
+import {handleRegister} from "../commands/player/handleRegister";
+import {WebSocketWithUserId, WSMessage} from "../types";
 
 export const MESSAGES_TYPE = {
   REG: "reg",

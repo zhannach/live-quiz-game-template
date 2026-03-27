@@ -1,6 +1,8 @@
 import {WebSocket} from "ws";
 import {WSMessage, WebSocketWithUserId} from "../types";
 import {dispatchMessage} from "./messages";
+import {games} from "../commands/gameManagement /handleCreateGame";
+import {updatePlayers} from "../commands/gameManagement /updatePlayers";
 
 export const controlConnection = (ws: WebSocket) => {
   const extWs = ws as WebSocketWithUserId;
@@ -12,6 +14,13 @@ export const controlConnection = (ws: WebSocket) => {
   });
 
   extWs.on("close", () => {
-    console.log("Client disconnected");
+    console.log("Client disconnected", extWs.userId);
+    if (extWs.gameId) {
+      const game = games.get(extWs.gameId);
+      if (game) {
+        game.players = game.players.filter((p) => p.index !== extWs.userId);
+        updatePlayers(game);
+      }
+    }
   });
 };
