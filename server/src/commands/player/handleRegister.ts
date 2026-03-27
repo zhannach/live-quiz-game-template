@@ -1,11 +1,7 @@
 import crypto from "crypto";
 
 import {WebSocket} from "ws";
-import {User, RegData} from "../../types";
-
-export interface WebSocketWithUserId extends WebSocket {
-  userId?: string;
-}
+import {User, RegData, WebSocketWithUserId} from "../../types";
 
 const users = new Map<string, User>();
 const connections = new Map<string, WebSocketWithUserId>();
