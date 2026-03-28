@@ -1,5 +1,7 @@
 import {handleCreateGame} from "../commands/gameManagement /handleCreateGame";
 import {handleJoinGame} from "../commands/gameManagement /handleJoinGame";
+import {handleAnswer} from "../commands/gamePlay/handleAnswer";
+import {handleStartGame} from "../commands/gamePlay/handleStartGame";
 import {handleRegister} from "../commands/player/handleRegister";
 import {WebSocketWithUserId, WSMessage} from "../types";
 
@@ -23,6 +25,7 @@ export const MESSAGES_TYPE = {
 export const dispatchMessage = (ws: WebSocketWithUserId, msg: WSMessage) => {
   switch (msg.type) {
     case MESSAGES_TYPE.REG:
+    case MESSAGES_TYPE.LOGIN:
       handleRegister(ws, msg.data);
       break;
     case MESSAGES_TYPE.CREATE_GAME:
@@ -30,6 +33,12 @@ export const dispatchMessage = (ws: WebSocketWithUserId, msg: WSMessage) => {
       break;
     case MESSAGES_TYPE.JOIN_GAME:
       handleJoinGame(ws, msg.data);
+      break;
+    case MESSAGES_TYPE.START_GAME:
+      handleStartGame(ws, msg.data);
+      break;
+    case MESSAGES_TYPE.ANSWER:
+      handleAnswer(ws, msg.data);
       break;
     default:
       console.warn("Unknown message type:", msg.type);
