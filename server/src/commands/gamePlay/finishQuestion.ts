@@ -6,13 +6,7 @@ import {sendQuestion} from "./sendQuestion.js";
 
 export function finishQuestion(game: Game) {
   const question = game.questions[game.currentQuestion];
-  if (!question) {
-    console.error("❌ Question is undefined", {
-      currentQuestion: game.currentQuestion,
-      total: game.questions.length,
-    });
-    return;
-  }
+
   const playerResults = game.players.map((player) => {
     const answer = game.playerAnswers.get(player.index);
 
@@ -57,11 +51,14 @@ export function finishQuestion(game: Game) {
 }
 
 function nextStep(game: Game) {
-  game.currentQuestion++;
+  const isLastQuestion = game.currentQuestion + 1 >= game.questions.length;
 
-  if (game.currentQuestion < game.questions.length) {
-    setTimeout(() => sendQuestion(game), 2000);
-  } else {
-    finishGame(game);
-  }
+  setTimeout(() => {
+    if (isLastQuestion) {
+      finishGame(game);
+    } else {
+      game.currentQuestion++;
+      sendQuestion(game);
+    }
+  }, 2000);
 }
