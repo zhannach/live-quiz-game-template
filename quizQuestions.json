@@ -1,0 +1,89 @@
+{
+  "questions": [
+    {
+      "text": "Who was the first President of the United States?",
+      "options": [
+        "Abraham Lincoln",
+        "George Washington",
+        "Thomas Jefferson",
+        "John Adams"
+      ],
+      "correctIndex": 1,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "Which ancient civilization built the pyramids?",
+      "options": ["Romans", "Greeks", "Egyptians", "Persians"],
+      "correctIndex": 2,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "In which country did the Renaissance begin?",
+      "options": ["France", "England", "Italy", "Spain"],
+      "correctIndex": 2,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "What wall divided Berlin from 1961 to 1989?",
+      "options": ["Iron Curtain", "Great Wall", "Berlin Wall", "Cold Wall"],
+      "correctIndex": 2,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "Who was the leader of Nazi Germany during World War II?",
+      "options": [
+        "Benito Mussolini",
+        "Adolf Hitler",
+        "Joseph Stalin",
+        "Winston Churchill"
+      ],
+      "correctIndex": 1,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "Which empire was ruled by Genghis Khan?",
+      "options": [
+        "Ottoman Empire",
+        "Roman Empire",
+        "Mongol Empire",
+        "Persian Empire"
+      ],
+      "correctIndex": 2,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "The Cold War was mainly between which two superpowers?",
+      "options": ["USA & China", "Germany & USSR", "USA & USSR", "UK & France"],
+      "correctIndex": 2,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "Which treaty ended World War I?",
+      "options": [
+        "Treaty of Paris",
+        "Treaty of Versailles",
+        "Treaty of Vienna",
+        "Treaty of Rome"
+      ],
+      "correctIndex": 1,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "Which ancient city was buried by the eruption of Mount Vesuvius in 79 AD?",
+      "options": ["Athens", "Pompeii", "Troy", "Carthage"],
+      "correctIndex": 1,
+      "timeLimitSec": 15
+    },
+    {
+      "text": "Which empire fell in 1453 after the capture of Constantinople?",
+      "options": [
+        "Roman Empire",
+        "Byzantine Empire",
+        "Ottoman Empire",
+        "Persian Empire"
+      ],
+      "correctIndex": 1,
+      "timeLimitSec": 15
+    }
+  ]
+}
