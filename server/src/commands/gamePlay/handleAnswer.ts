@@ -1,6 +1,6 @@
 import {AnswerData, WebSocketWithUserId} from "../../types";
-import {games} from "../gameManagement /handleCreateGame";
-import {finishQuestion} from "./finishQuestion";
+import {games} from "../gameManagement/handleCreateGame.js";
+import {finishQuestion} from "./finishQuestion.js";
 
 export function handleAnswer(ws: WebSocketWithUserId, data: AnswerData) {
   const game = games.get(data.gameId);

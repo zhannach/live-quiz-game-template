@@ -1,6 +1,6 @@
 import {Game} from "../../types";
-import {broadcastMessage} from "../../utils/broadcastMessage";
-import {finishQuestion} from "./finishQuestion";
+import {broadcastMessage} from "../../utils/broadcastMessage.js";
+import {finishQuestion} from "./finishQuestion.js";
 
 export function sendQuestion(game: Game) {
   const question = game.questions[game.currentQuestion];

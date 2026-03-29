@@ -1,8 +1,8 @@
-import {handleCreateGame} from "../commands/gameManagement /handleCreateGame";
-import {handleJoinGame} from "../commands/gameManagement /handleJoinGame";
-import {handleAnswer} from "../commands/gamePlay/handleAnswer";
-import {handleStartGame} from "../commands/gamePlay/handleStartGame";
-import {handleRegister} from "../commands/player/handleRegister";
+import {handleCreateGame} from "../commands/gameManagement/handleCreateGame.js";
+import {handleJoinGame} from "../commands/gameManagement/handleJoinGame.js";
+import {handleAnswer} from "../commands/gamePlay/handleAnswer.js";
+import {handleStartGame} from "../commands/gamePlay/handleStartGame.js";
+import {handleRegister} from "../commands/player/handleRegister.js";
 import {WebSocketWithUserId, WSMessage} from "../types";
 
 export const MESSAGES_TYPE = {

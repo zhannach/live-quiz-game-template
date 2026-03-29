@@ -1,5 +1,5 @@
 import {Game} from "../../types";
-import {broadcastMessage} from "../../utils/broadcastMessage";
+import {broadcastMessage} from "../../utils/broadcastMessage.js";
 
 export function finishGame(game: Game) {
   const scoreboard = [...game.players]

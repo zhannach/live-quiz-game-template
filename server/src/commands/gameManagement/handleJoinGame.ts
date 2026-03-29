@@ -1,8 +1,8 @@
 import {JoinGameData, WebSocketWithUserId} from "../../types";
-import {games} from "./handleCreateGame";
-import {users, connections} from "../player/handleRegister";
-import {MESSAGES_TYPE} from "../../ws/messages";
-import {updatePlayers} from "./updatePlayers";
+import {games} from "./handleCreateGame.js";
+import {users, connections} from "../player/handleRegister.js";
+import {MESSAGES_TYPE} from "../../ws/messages.js";
+import {updatePlayers} from "./updatePlayers.js";
 
 export function handleJoinGame(ws: WebSocketWithUserId, {code}: JoinGameData) {
   const game = [...games.values()].find((g) => g.code === code);

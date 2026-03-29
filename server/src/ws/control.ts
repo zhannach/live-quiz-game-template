@@ -1,8 +1,8 @@
 import {WebSocket} from "ws";
 import {WSMessage, WebSocketWithUserId} from "../types";
-import {dispatchMessage} from "./messages";
-import {games} from "../commands/gameManagement /handleCreateGame";
-import {updatePlayers} from "../commands/gameManagement /updatePlayers";
+import {dispatchMessage} from "./messages.js";
+import {games} from "../commands/gameManagement/handleCreateGame.js";
+import {updatePlayers} from "../commands/gameManagement/updatePlayers.js";
 
 export const controlConnection = (ws: WebSocket) => {
   const extWs = ws as WebSocketWithUserId;

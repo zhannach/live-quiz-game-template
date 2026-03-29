@@ -1,7 +1,7 @@
 import {CreateGameData, Game, WebSocketWithUserId} from "../../types";
-import {createGameCode} from "../../utils/createGameCode";
+import {createGameCode} from "../../utils/createGameCode.js";
 import crypto from "crypto";
-import {MESSAGES_TYPE} from "../../ws/messages";
+import {MESSAGES_TYPE} from "../../ws/messages.js";
 
 export const games = new Map<string, Game>();
 

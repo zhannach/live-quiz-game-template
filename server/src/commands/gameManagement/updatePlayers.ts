@@ -1,6 +1,6 @@
 import {Game} from "../../types";
-import {connections} from "../player/handleRegister";
-import {MESSAGES_TYPE} from "../../ws/messages";
+import {connections} from "../player/handleRegister.js";
+import {MESSAGES_TYPE} from "../../ws/messages.js";
 
 export function updatePlayers(game: Game) {
   const updatePlayersMsg = JSON.stringify({

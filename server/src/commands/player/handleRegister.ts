@@ -1,7 +1,7 @@
 import crypto from "crypto";
 
 import {User, RegData, WebSocketWithUserId} from "../../types";
-import { MESSAGES_TYPE } from "../../ws/messages";
+import { MESSAGES_TYPE } from "../../ws/messages.js";
 
 export const users = new Map<string, User>();
 export const connections = new Map<string, WebSocketWithUserId>();
